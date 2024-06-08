@@ -1,0 +1,13 @@
+def is_armstrong(num):
+    def helper(n, length):
+        if n == 0:
+            return 0
+        else:
+            return (n % 10) ** length + helper(n // 10, length)
+    
+    num_str = str(num)
+    length = len(num_str)
+    return num == helper(num, length)
+
+number = 153 
+print(is_armstrong(number))
