@@ -1,0 +1,13 @@
+def is_perfect_number(n):
+    def sum_of_divisors(num, divisor=1):
+        if divisor == num:
+            return 0
+        if num % divisor == 0:
+            return divisor + sum_of_divisors(num, divisor + 1)
+        else:
+            return sum_of_divisors(num, divisor + 1)
+
+    return n == sum_of_divisors(n)
+
+num = 28  
+print(is_perfect_number(num))
