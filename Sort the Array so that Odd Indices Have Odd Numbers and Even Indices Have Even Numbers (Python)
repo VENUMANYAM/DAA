@@ -1,0 +1,8 @@
+def sort_array_by_parity(nums):
+    even, odd = [x for x in nums if x % 2 == 0], [x for x in nums if x % 2 != 0]
+    sorted_nums = [0] * len(nums)
+    sorted_nums[::2], sorted_nums[1::2] = even, odd
+    return sorted_nums
+
+nums = [4, 2, 5, 7]
+print(sort_array_by_parity(nums))
