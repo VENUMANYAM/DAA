@@ -1,0 +1,13 @@
+def is_prime(num, divisor=None):
+    if divisor is None:
+        divisor = num - 1
+    if num < 2:
+        return False
+    if divisor == 1:
+        return True
+    if num % divisor == 0:
+        return False
+    return is_prime(num, divisor - 1)
+
+num = 29  
+print(is_prime(num))
