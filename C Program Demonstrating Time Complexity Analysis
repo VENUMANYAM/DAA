@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+void linearFunction(int n) {
+    for (int i = 0; i < n; i++) {
+        printf("%d ", i);
+    }
+    printf("\n");
+}
+
+void quadraticFunction(int n) {
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("%d,%d ", i, j);
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    int n = 5;
+    printf("Linear function output:\n");
+    linearFunction(n);
+
+    printf("Quadratic function output:\n");
+    quadraticFunction(n);
+
+    return 0;
+}
