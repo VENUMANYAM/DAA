@@ -1,0 +1,16 @@
+def lastStringBeforeEmpty(s):
+    while True:
+        seen = set()
+        new_s = []
+        for c in s:
+            if c not in seen:
+                seen.add(c)
+            else:
+                new_s.append(c)
+        if not new_s:
+            return ''.join(s)
+        s = new_s
+
+# Sample Input
+s = "aabcbbca"
+print(lastStringBeforeEmpty(s))  # Output: "ba"
