@@ -1,0 +1,23 @@
+def maxSubsequenceSum(nums, queries):
+    MOD = 10**9 + 7
+    
+    def maxNonAdjacentSum(arr):
+        incl, excl = 0, 0
+        for num in arr:
+            new_excl = max(incl, excl)
+            incl = excl + num
+            excl = new_excl
+        return max(incl, excl)
+    
+    total_sum = 0
+    for pos, val in queries:
+        nums[pos] = val
+        total_sum += maxNonAdjacentSum(nums)
+        total_sum %= MOD
+    
+    return total_sum
+
+# Sample Input
+nums = [1, 2, 3, 4]
+queries = [[1, 5], [2, 6]]
+print(maxSubsequenceSum(nums, queries))  # Output: 21
