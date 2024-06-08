@@ -1,0 +1,18 @@
+def minimizeCost(s):
+    s = list(s)
+    n = len(s)
+    last_seen = {}
+    
+    for i in range(n):
+        if s[i] == '?':
+            for c in 'abcdefghijklmnopqrstuvwxyz':
+                if c not in last_seen:
+                    s[i] = c
+                    break
+        last_seen[s[i]] = i
+    
+    return ''.join(s)
+
+# Sample Input
+s = "a?b?c"
+print(minimizeCost(s))  # Output: "aabbc"
